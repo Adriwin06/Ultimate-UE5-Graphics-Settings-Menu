@@ -28,20 +28,21 @@ You can already experience this City Sample build in it current stage by clickin
 The goal of this project is to make the ultimate game menu system that has everything you need, from a complete options menu (only graphics settings at the moment) that feature practically all settings that can be useful for normal and more advanced users including settings for common plugins/assets, to a beautiful main menu. And all of that free for everyone to use and/or contribute to save hours and hours of making a menu system that doesn't even necessarily feature as many options as this one. Everything is in Blueprint and is easily reusable/customizable whether you want to use it as it is or you want to build your own menu by using this one as a base. You can check out the WIP [Wiki](https://github.com/Adriwin06/Ultimate-UE5-CommonUI-Full-Game-Menu-System/wiki) for more informations. To make things even better, everyone can contribute, because the more people contribute, the better it will represent what the community wants. I will then create a branch with all community changes.
 
 ## Branches
-There are currently 3 different branches:
+There are currently 4 different branches:
 
-- [NvRTX](https://github.com/Adriwin06/Ultimate-CommonUI-Menu-System/tree/NvRTX): This branch will be the most frequently updated and has the most settings, as it includes many settings from the [NvRTX branch](https://developer.nvidia.com/game-engines/unreal-engine/rtx-branch) of Unreal Engine.
-- [main](https://github.com/Adriwin06/Ultimate-CommonUI-Menu-System/tree/main): This is the default branch and the one you should use if your game is not using the [NvRTX Branch](https://github.com/Adriwin06/Ultimate-CommonUI-Menu-System/tree/NvRTX) of Unreal Enigne.
-- [5.4](https://github.com/Adriwin06/Ultimate-CommonUI-Menu-System/tree/5.4): This branch is based on the main branch and is a port to Unreal Engine 5.4, with new Unreal Engine 5.4 specific settings. It will merged to main when the FSR3 plugin become available for Unreal Engine 5.4.
-- [Enhanced Inputs](https://github.com/Adriwin06/Ultimate-CommonUI-Menu-System/tree/Enhanced-Inputs): This branch is experimental and updates are very rare, so it will almost always be outdated compared to the other branches. Here, I experiment and try to make Enhanced Inputs work with CommonUI.
+- [main](https://github.com/Adriwin06/Ultimate-CommonUI-Menu-System/tree/main): This branch uses Unreal Engine 5.4, it is the default branch and the one you should use if your game is not using the [NvRTX Branch](https://github.com/Adriwin06/Ultimate-CommonUI-Menu-System/tree/NvRTX) or the [5.3 branch](https://github.com/Adriwin06/Ultimate-CommonUI-Menu-System/tree/5.3).
+- [5.3](https://github.com/Adriwin06/Ultimate-CommonUI-Menu-System/tree/5.3): This branch is for peoples who still use Unreal Engine 5.3, but since it's an outdated Unreal Engine 5 version, it won't be updated anymore. Switch to the [main branch](https://github.com/Adriwin06/Ultimate-CommonUI-Menu-System/tree/main) for latest updates.
+- [NvRTX](https://github.com/Adriwin06/Ultimate-CommonUI-Menu-System/tree/NvRTX): This branch has the most settings since it includes many settings from the [NvRTX branch](https://developer.nvidia.com/game-engines/unreal-engine/rtx-branch) of Unreal Engine, it uses the 5.3 version of their branch.
+- [Lyra](https://github.com/Adriwin06/Ultimate-CommonUI-Menu-System/tree/Lyra): This branch make the menu look like Lyra, and even better. Big thanks to [ArbyKay](https://github.com/ArbyKay) for this. It uses Unreal Engine 5.4.
+- [Enhanced Inputs](https://github.com/Adriwin06/Ultimate-CommonUI-Menu-System/tree/Enhanced-Inputs): This branch is experimental, and updates are very rare, so it will almost always be outdated compared to the other branches. Here, I experiment and try to make Enhanced Inputs work with CommonUI. It uses Unreal Engine 5.3.
 
 ## Plugins Used
-If you have a missing plugins error, it's probably because I forgot to disable the plugins that I use to developp this project and makes my worflow easier, but they are absolutely not requiered.
+If you have a missing plugins error, it's probably because I forgot to disable the plugins that I use to develop this project and makes my worflow easier, but they are absolutely not required.
 The plugins that are used in the menu need to be installed in order for this to properly work. Fortunately, they are now included in the project files.  Here is a table of these plugins: 
 | Name | Description |
 | ------------- | ------------- |
 | [NVIDIA DLSS 3.7](https://developer.nvidia.com/rtx/dlss/get-started#ue-version)   |  NVIDIA DLSS 3.7 is a suite of AI rendering technologies powered by Tensor Cores on GeForce RTX GPUs for faster frame rates, better image quality, and great responsiveness.  |
-| [AMD FidelityFX Super Resolution 3](https://gpuopen.com/learn/ue-fsr3/)  |  The AMD FidelityFX Super Resolution 3 (FSR 3) plugin for Unreal Engine provides an open source, high-quality solution for producing high resolution frames from lower resolution inputs and a frame interpolation technique which can increase the frame rate up to twice the input rate to improve smoothness of animations and frame pacing.  |
+| [AMD FidelityFX Super Resolution 3.1](https://gpuopen.com/learn/ue-fsr3/)  |  The AMD FidelityFX Super Resolution 3 (FSR 3) plugin for Unreal Engine provides an open source, high-quality solution for producing high resolution frames from lower resolution inputs and a frame interpolation technique which can increase the frame rate up to twice the input rate to improve smoothness of animations and frame pacing.  |
 | [Intel Xe Super Sampling](https://github.com/GameTechDev/XeSSUnrealPlugin)  |  Intel XeSS enables an innovative framerate boosting technology supported by Intel Arc graphics cards and other GPU vendors. Using AI deep-learning to perform upscaling, XeSS offers higher framerates without degrading the image quality.  |
 | [Async Loading Screen](https://github.com/truong-bui/AsyncLoadingScreen)  |  Async Loading Screen allows you to easily configure a Loading Screen System in the project settings, and automatically add a Loading Screen whenever you open a new level. Async Loading Screen also comes with pre-design UI layouts and default icons that make it easy to custom your loading screen in a few minutes.  |
 
@@ -63,16 +64,15 @@ This was external plugins, but I use other plugins integrated in the Engine:
 I recommend launching the game in "Standalone Game" mode instead of "Selected Viewport" or "New Editor Window (PIE)" mode. This way, if it crashes, it won't crash the whole engine, and you can change resolution settings, fullscreen, etc, and actually see the changes. And it's better because it's closer to what players will experience.
 
 ## Known Bugs
-  - Bloom Size Scale, Lumen GI Scene Lighting Update Speed, Lumen GI Final Gather Lighting Update Speed, Exposure EV100 Min, Exposure EV100 Max, AO Power and AO Quality settings are not working. The issue stems from these variables not being assigned to a pin in a "Make PostProcessSettings" node, because the pin doesn't show up, despite checking the "Show pin" box. It seems like it is an Engine bug.
+None for now.
 
 ## To do
-  - Add other settings like audio device, audio mode, color blind mode, etc and settings from the NvRTX branch
   - Enhance Enhanced Input system implementation (Available in experimental version in [this branch](https://github.com/Adriwin06/Ultimate-UE5-CommonUI-Full-Game-Menu-System/tree/Enhanced-Inputs))
-  - Add comparaison images for each settings, and custom description widgets when it's needed
+  - Add comparison images for each setting, and custom description widgets when it's needed
   - Fix all bugs.
 
 ### To maybe do in C++
   - CommonBoundActionBar actions, instead of hidden action button in the widget that got displayed in this bar.
   - Update the style of buttons in the CommonBoundActionBar of the "Options" menu when switching between controller and mouse & keyboard inputs, avoiding the use of two separate bars with different styles that are hidden based on the input type.
   - Prompt system.
-  - Tab List View automation to eliminate the need for separate button blueprints for each tab button.
+  - Tab List View automation to eliminate the need for separate button Blueprint for each tab button.
